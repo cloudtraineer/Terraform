@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo yum install httpd -y
-sudo cd /var/www/html
-sudo echo "Created using Terraform" >> index.html
-sudo service httpd start
+yum install httpd -y
+cd /var/www/html
+echo "Created using Terraform" >> index.html
+service httpd start
