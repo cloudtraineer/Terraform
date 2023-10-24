@@ -1,4 +1,6 @@
 #used to exclude files that are not needed to be commited
+.git
+.git*
 .terraform
 .terraform*
 terraform*
