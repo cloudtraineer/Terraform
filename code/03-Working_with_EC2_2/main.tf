@@ -37,14 +37,7 @@ resource "aws_instance" "myinstance" {
   instance_type = "t2.micro"
   vpc_security_group_ids  = ["${aws_security_group.instance.id}"]
   key_name = "mumbai"
-  user_data = <<EOF
-          #!/bin/bash
-          yum install httpd -y
-          cd /var/www/html
-          echo "Hello, World" > index.html
-          service httpd start
-          chkconfig httpd on
-  EOF	  
+  user_data = "${file("install_apache.sh")}"	  
   tags = {
     Name = "myec2"
   }
