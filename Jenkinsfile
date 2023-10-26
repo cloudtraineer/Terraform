@@ -3,6 +3,17 @@ pipeline {
 
     stages {
 
+        stage('Manual Approval') {
+            steps {
+                script {
+                    // Wait for manual approval
+                    input message: 'Do you approve the Terraform plan and want to deploy it?',
+                          ok: 'Deploy',
+                          parameters: [booleanParam(defaultValue: true, description: 'Check to deploy', name: 'DEPLOY')]
+                }
+            }
+        }
+
         stage('Terraform Init') {
             steps {
                 script {
