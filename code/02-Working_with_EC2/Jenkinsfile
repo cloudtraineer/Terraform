@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+
+        stage('checkout'){
+            steps{
+                script{
+                    sh 'cd code/02-Working_with_EC2'
+                }
+            }
+        }
         
         stage('Terraform Init') {
             steps {
