@@ -6,7 +6,7 @@ pipeline {
         stage('checkout'){
             steps{
                 script{
-                    sh 'cd ./code/02-Working_with_EC2'
+                    sh 'cd ${env.Workspace}/code/02-Working_with_EC2'
                     sh 'pwd'
                 }
             }
