@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                // Check out the source code from your SCM (e.g., Git)
-                checkout scm
-            }
-        }
-
         stage('Terraform Init') {
             steps {
                 script {
