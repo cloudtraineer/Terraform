@@ -7,7 +7,6 @@ pipeline {
             steps {
                 script {
                     dir("${env.Workspace}/code/02-Working_with_EC2") {
-                        sh 'pwd'
                         sh 'terraform init'
                     }
                 }
