@@ -6,8 +6,8 @@ pipeline {
         stage('checkout'){
             steps{
                 script{
-                    sh 'cd ${env.Workspace}/code/02-Working_with_EC2'
-                    sh 'pwd'
+                    def targetDir = "${env.Workspace}/code/02-Working_with_EC2"
+
                 }
             }
         }
@@ -15,7 +15,10 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    sh 'terraform init'
+                      dir(targetDir) {
+                      sh 'pwd'
+                      sh 'terraform init
+                     } 
                 }
             }
         }
