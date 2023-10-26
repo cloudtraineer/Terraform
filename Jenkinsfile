@@ -3,19 +3,17 @@ pipeline {
 
     stages {
 
-        stage('checkout'){
-            steps{
-                script{
-                    def targetDir = "${env.Workspace}/code/02-Working_with_EC2"
-
-                }
-            }
-        }
+        stage('Checkout') {
+                steps {
+                   // Check out the source code from your SCM (e.g., Git)
+                      checkout scm
+              }
+          }
         
         stage('Terraform Init') {
             steps {
                 script {
-                      dir(targetDir) {
+                      dir('${env.Workspace}/code/02-Working_with_EC2') {
                       sh 'pwd'
                       sh 'terraform init
                      } 
