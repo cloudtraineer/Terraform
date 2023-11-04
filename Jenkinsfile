@@ -16,7 +16,10 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
-                    sh 'terraform plan -out=tfplan'
+                    dir("${env.Workspace}/code/02-Working_with_EC2") 
+                    {
+                       sh 'terraform plan -out=tfplan'
+                    }
                 }
             }
         }
@@ -35,8 +38,11 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    input message: 'Deploy infrastructure?', parameters: [booleanParam(defaultValue: true, description: 'Check to deploy', name: 'DEPLOY')]
-                    sh 'terraform apply tfplan'
+                    dir("${env.Workspace}/code/02-Working_with_EC2") 
+                    {
+                        sh 'terraform apply tfplan'
+                    }
+
                 }
             }
         }
