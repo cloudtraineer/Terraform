@@ -4,5 +4,6 @@ terraform {
     bucket = "<backend_bucket_name>"
     key = "terraform-state/terraform.tfstate"
     region = "ap-south-1"
+    profile = "<profile_name>"
  }
 }
