@@ -11,6 +11,7 @@ terraform {
 }
 provider "aws" {
   region = "ap-south-1"
+  profile = "<profile_name>"
 }
 
 # Create an EC2 instance
