@@ -16,8 +16,8 @@ provider "aws" {
 
 # Create an EC2 instance
 resource "aws_instance" "example" {
-  ami           = "ami-0b41f7055516b991a"
-  instance_type = "t2.micro"
+    ami           = "ami-001843b876406202a"
+    instance_type = "t2.small"
 }
 
 import {
