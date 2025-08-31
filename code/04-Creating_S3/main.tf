@@ -14,5 +14,6 @@ provider "aws" {
 
 # Create a S3 bucket
 resource "aws_s3_bucket" "aws_bucket" {
-  bucket		  = "${var.bucket_name}"
+  #bucket =  "aws-${var.bucket_name}"            #Referencing variable along with String    
+  bucket		  = var.bucket_name                  #Referencing variable Directly
 }
