@@ -1,5 +1,6 @@
 module "my_module_bucket" {
-    source = "./s3-module"
+    #source = "github.com/cloudtraineer/terraform-s3-module"          # used to reference Terraform Module form Github
+    source = "./s3-module"                                            # used to reference Terraform Module form Local
     bucket_name = "modulebucketdemo45"
     
 }
